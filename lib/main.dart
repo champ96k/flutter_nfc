@@ -3,6 +3,9 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_nfc/record_setting/raw_record_setting.dart';
+import 'package:flutter_nfc/record_setting/text_record_setting.dart';
+import 'package:flutter_nfc/record_setting/uri_record_setting.dart';
 import 'package:flutter_nfc_kit/flutter_nfc_kit.dart';
 import 'package:ndef/ndef.dart' as ndef;
 
@@ -221,55 +224,55 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                                   SimpleDialogOption(
                                     child: const Text("Text Record"),
                                     onPressed: () async {
-                                      // Navigator.pop(context);
-                                      // final result = await Navigator.push(
-                                      //     context,
-                                      //     MaterialPageRoute(builder: (context) {
-                                      //   return TextRecordSetting();
-                                      // }));
-                                      // if (result != null) {
-                                      //   if (result is ndef.TextRecord) {
-                                      //     setState(() {
-                                      //       _records!.add(result);
-                                      //     });
-                                      //   }
-                                      // }
+                                      Navigator.pop(context);
+                                      final result = await Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return TextRecordSetting();
+                                      }));
+                                      if (result != null) {
+                                        if (result is ndef.TextRecord) {
+                                          setState(() {
+                                            _records!.add(result);
+                                          });
+                                        }
+                                      }
                                     },
                                   ),
                                   SimpleDialogOption(
                                     child: const Text("Uri Record"),
                                     onPressed: () async {
-                                      // Navigator.pop(context);
-                                      // final result = await Navigator.push(
-                                      //     context,
-                                      //     MaterialPageRoute(builder: (context) {
-                                      //   return UriRecordSetting();
-                                      // }));
-                                      // if (result != null) {
-                                      //   if (result is ndef.UriRecord) {
-                                      //     setState(() {
-                                      //       _records!.add(result);
-                                      //     });
-                                      //   }
-                                      // }
+                                      Navigator.pop(context);
+                                      final result = await Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return UriRecordSetting();
+                                      }));
+                                      if (result != null) {
+                                        if (result is ndef.UriRecord) {
+                                          setState(() {
+                                            _records!.add(result);
+                                          });
+                                        }
+                                      }
                                     },
                                   ),
                                   SimpleDialogOption(
                                     child: const Text("Raw Record"),
                                     onPressed: () async {
-                                      // Navigator.pop(context);
-                                      // final result = await Navigator.push(
-                                      //     context, MaterialPageRoute(
-                                      //         builder: (context) {
-                                      //   return NDEFRecordSetting();
-                                      // }));
-                                      // if (result != null) {
-                                      //   if (result is ndef.NDEFRecord) {
-                                      //     setState(() {
-                                      //       _records!.add(result);
-                                      //     });
-                                      //   }
-                                      // }
+                                      Navigator.pop(context);
+                                      final result = await Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return NDEFRecordSetting();
+                                      }));
+                                      if (result != null) {
+                                        if (result is ndef.NDEFRecord) {
+                                          setState(() {
+                                            _records!.add(result);
+                                          });
+                                        }
+                                      }
                                     },
                                   ),
                                 ],
